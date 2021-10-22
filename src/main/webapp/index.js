@@ -25,7 +25,9 @@ function getHomePage(){
                     window.location.href="/manager.html";
                 } else {
                     window.location.href="/employee.html";
-                }
+                } 
+             } else {
+                 alert(xhr.responseText);
              }
         }
     }   

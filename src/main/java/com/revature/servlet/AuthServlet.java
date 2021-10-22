@@ -23,6 +23,7 @@ public class AuthServlet extends HttpServlet {
         String passwordParam = req.getParameter("pass_word");
 //        String idStringParam = req.getParameter("id"); // params not present will be null
         System.out.println("Credentials received: "+emailParam +" "+passwordParam);
+        resp.getWriter().write(emailParam + " " + passwordParam );
 
 
         // check to see if user/pass match a user in the db
@@ -42,5 +43,7 @@ public class AuthServlet extends HttpServlet {
         } catch(Exception e){
             resp.setStatus(418);
         }
+
+
     }
 }
