@@ -9,7 +9,7 @@ window.onload = getReimbursements();
 function getReimbursements(){
     
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:8080/Project_1/reimbursements");
+    xhr.open("GET", "/reimbursements");
     xhr.onreadystatechange = function() {
 
         let reimbursementJson = xhr.responseText;
@@ -46,7 +46,7 @@ function updateTicket(){
     console.log(idInput);
 
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:8080/Project_1/reimbursements");
+    xhr.open("POST", "/reimbursements");
     xhr.onreadystatechange = function() {
         if(xhr.readyState===4){ 
             console.log("resolved reimbursement successfully");

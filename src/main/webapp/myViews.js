@@ -2,7 +2,7 @@ document.getElementById("viewInfo").addEventListener("click", getEmployees);
 
 function getEmployees(){
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:8080/Project_1/employees");
+    xhr.open("GET", "/employees");
     xhr.onreadystatechange = function() {
 
         let employeeJson = xhr.responseText;

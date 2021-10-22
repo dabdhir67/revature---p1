@@ -10,7 +10,7 @@ function getHomePage(){
 
 
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:8080/Project_1/login");
+    xhr.open("POST", "/index.html");
     xhr.onreadystatechange = function(){
         if(xhr.readyState===4){
             // look at status code (either 401 or 200)
@@ -22,9 +22,9 @@ function getHomePage(){
                 sessionStorage.setItem("token", token);
                 const tokenArr = token.split(":");
                 if(tokenArr[1]=="Manager"){
-                    window.location.href="http://localhost:8080/Project_1/manager.html";
+                    window.location.href="/manager.html";
                 } else {
-                    window.location.href="http://localhost:8080/Project_1/employee.html";
+                    window.location.href="/employee.html";
                 }
              }
         }
