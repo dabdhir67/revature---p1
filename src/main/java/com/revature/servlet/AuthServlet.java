@@ -26,10 +26,10 @@ public class AuthServlet extends HttpServlet {
 
 
         // check to see if user/pass match a user in the db
-        Employee employee = employeeService.getByCredentials(emailParam, passwordParam);
 
         // sent 401 (Unauthorized) if we can't find a user with those credentials
         try {
+            Employee employee = employeeService.getByCredentials(emailParam, passwordParam);
             if (employee == null) {
                 resp.sendError(401, "User credentials provided did not return a valid account");
             } else {
