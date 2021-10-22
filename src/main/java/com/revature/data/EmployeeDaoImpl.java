@@ -94,6 +94,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
         try{
             Connection connection = connectionService.getConnection();
+            System.out.println(email + "" + password);
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, email);
             pstmt.setString(2, password);
