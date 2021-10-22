@@ -29,14 +29,18 @@ public class AuthServlet extends HttpServlet {
         Employee employee = employeeService.getByCredentials(emailParam, passwordParam);
 
         // sent 401 (Unauthorized) if we can't find a user with those credentials
-        if(employee == null){
-            resp.sendError(401, "User credentials provided did not return a valid account");
-        } else {
-            // send 200 (OK) if we do find a user with those credentials
-            resp.setStatus(200);
-            // we can also send back some token that identifies the particular user that matched
-            String token = employee.getEmployeeId() + ":" + employee.getUserRole();
-            resp.setHeader("Authorization", token);
+        try {
+            if (employee == null) {
+                resp.sendError(401, "User credentials provided did not return a valid account");
+            } else {
+                // send 200 (OK) if we do find a user with those credentials
+                resp.setStatus(200);
+                // we can also send back some token that identifies the particular user that matched
+                String token = employee.getEmployeeId() + ":" + employee.getUserRole();
+                resp.setHeader("Authorization", token);
+            }
+        } catch(Exception e){
+            resp.setStatus(418);
         }
     }
 }
