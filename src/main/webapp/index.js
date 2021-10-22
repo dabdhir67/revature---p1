@@ -10,7 +10,7 @@ function getHomePage(){
 
 
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "/index.html");
+    xhr.open("POST", "/login");
     xhr.onreadystatechange = function(){
         if(xhr.readyState===4){
             // look at status code (either 401 or 200)
