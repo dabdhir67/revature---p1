@@ -9,7 +9,7 @@ window.onload = getReimbursements();
 function getReimbursements(){
     
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "/reimbursements");
+    xhr.open("GET", "/Project_1-1.0-SNAPSHOT/reimbursements");
     xhr.onreadystatechange = function() {
 
         let reimbursementJson = xhr.responseText;
